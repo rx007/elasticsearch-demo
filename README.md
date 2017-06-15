@@ -1,7 +1,7 @@
 # Elasticsearch and NextCloud Demo
 <p align=center>
 
-This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture. The nginx logs will be sent to Elasticsearch via Fluent and then can be analyzed with Kibana. The logs will also be archived to the S3 server. 
+This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture. The nginx logs will be sent to Elasticsearch via Fluent and then can be analyzed with Kibana. The logs will also be archived to the S3 server.
 
 ### Prerequisites
 
@@ -47,7 +47,7 @@ ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minute
 1. Goto http://127.0.0.1 in your web browser
 2. Login with nextcloud for the username and password
 3. Click on the folder "s3"
-4. After a few minutes, the nginx log files will start appear there from Fluent.
+4. After a few minutes, the nginx log files will start appearing there from Fluent.
 
 ### Accessing Kibana
 1. Goto https://0.0.0.0:5601 in your web browser

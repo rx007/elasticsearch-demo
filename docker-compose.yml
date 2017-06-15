@@ -1,0 +1,75 @@
+version: "2"
+
+services:
+
+  fileserverweb:
+    build: ./fileserver
+    restart: always
+    volumes:
+      - ./fileserver/html:/var/www/html
+    networks:
+      - web
+
+  fluent:
+    build: ./fluent
+    restart: always
+    networks:
+      - web
+    volumes_from:
+       - nginx
+
+  elasticsearch:
+    build: ./elasticsearch
+    restart: always
+    networks:
+      - web
+
+  kibana:
+    build: ./kibana
+    restart: always
+    ports:
+      - 5601:5601
+    networks:
+      - web
+
+  mysql:
+    build: ./mysql
+    restart: always
+    networks:
+      - web
+
+  phpfpm:
+    build: ./phpfpm
+    restart: always
+    volumes_from:
+       - fileserverweb
+    networks:
+      - web
+
+  s3:
+    build: ./s3
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+      - web
+    networks:
+      web:
+        aliases:
+          - s3.docker.test
+          - mybucket.s3.docker.test
+
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes_from:
+       - fileserverweb
+    networks:
+      - web
+
+networks:
+  web:

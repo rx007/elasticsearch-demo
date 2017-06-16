@@ -6,7 +6,7 @@ This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 
 ### Prerequisites
 
 1. Docker for [Mac](https://download.docker.com/mac/stable/Docker.dmg) or [Windows](https://download.docker.com/win/stable/InstallDocker.msi).
-2. This Git [Repo](https://github.com/scality/TechMarketing/archive/master.zip)
+2. This Git [Repo](https://github.com/rusher81572/elasticsearch-demo/archive/master.zip)
 3. 3GB of RAM or greater for Docker
 
 ### Building the images

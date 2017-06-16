@@ -12,7 +12,7 @@ This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 
 ### Building the images
 ```
 unzip elastic-demo-master.zip
-cd elastic-demo-master/NextCloud
+cd elastic-demo-master
 docker-compose build
 ```
 

@@ -18,9 +18,32 @@ services:
     volumes_from:
        - nginx
 
-  elasticsearch:
+  elasticsearch-master:
     build: ./elasticsearch
     restart: always
+    environment:
+    - mode=master
+    - nodes=["elasticsearch-master", "elasticsearch-slave1", "elasticsearch-slave2"]
+    networks:
+      - web
+    ports:
+      - 9200:9200
+
+  elasticsearch-slave1:
+    build: ./elasticsearch
+    restart: always
+    environment:
+      - mode=slave
+      - nodes=["elasticsearch-master", "elasticsearch-slave1", "elasticsearch-slave2"]
+    networks:
+      - web
+
+  elasticsearch-slave2:
+    build: ./elasticsearch
+    restart: always
+    environment:
+      - mode=slave
+      - nodes=["elasticsearch-master", "elasticsearch-slave1", "elasticsearch-slave2"]
     networks:
       - web
 

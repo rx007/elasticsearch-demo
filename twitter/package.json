@@ -1,0 +1,9 @@
+{
+  "name": "elasticsearchdemo-twitter",
+  "version": "0.0.1",
+  "dependencies": {
+    "twitter": "",
+    "body-parser": "latest",
+    "request": ""
+  }
+}

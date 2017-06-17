@@ -58,6 +58,10 @@ ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minute
 2. Click the create button
 3. Start analyzing data
 
+The default index of "logstash" will show you the nginx logs.
+
+To view Twitter traffic, change the index to twitter or go to Management->Index Patterns-> + and then add twitter.
+
 ### Stopping and Erasing the demo
 
 The following commands will stop and delete all running containers.

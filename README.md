@@ -2,7 +2,7 @@
 <p align=center>
 
 The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs
-and Twitter for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
+and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minute
 1. Goto http://127.0.0.1 in your web browser
 2. Login with nextcloud for the username and password
 3. Click on the folder "s3"
-4. After a few minutes, the nginx log files will start appearing there from Fluent.
+4. After a few minutes, the nginx log files and Tweets will start appearing there from Fluent and the Twitter app.
 
 ### Accessing Kibana
 1. Goto https://0.0.0.0:5601 in your web browser

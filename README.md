@@ -55,6 +55,8 @@ ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minute
 
 ### Accessing Kibana
 1. Goto https://0.0.0.0:5601 in your web browser
+2. Click the create button
+3. Start analyzing data
 
 ### Stopping and Erasing the demo
 

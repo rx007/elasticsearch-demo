@@ -60,7 +60,7 @@ ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minute
 
 The default index of "logstash" will show you the nginx logs.
 
-To view Twitter traffic, change the index to twitter or go to Management->Index Patterns-> + and then add twitter.
+To view Twitter traffic, change the index to twitter or go to Management->Index Patterns-> + and then add twitter. Uncheck 'Index contains time-based events'.
 
 ### Stopping and Erasing the demo
 

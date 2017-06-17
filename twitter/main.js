@@ -21,7 +21,7 @@ var client = new Twitter({
 function search_twitter() {
 
   client.stream('statuses/filter', {
-    track: 'javascript'
+    track: twitter_topic
   }, function(stream) {
 
     stream.on('data', function(event) {

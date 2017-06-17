@@ -1,4 +1,4 @@
-# Elasticsearch and NextCloud Demo
+# Mine data with Elasticsearch
 <p align=center>
 
 The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs

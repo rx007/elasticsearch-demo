@@ -51,7 +51,7 @@ function search_twitter() {
     });
 
     stream.on('error', function(error) {
-      console.log('\nAn error has occurred. Restarting search.')
+      console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search.')
       search_twitter();
     });
   });

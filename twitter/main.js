@@ -34,7 +34,7 @@ function search_twitter() {
       });
 
       var options = {
-        url: elasticsearch_url + '/logstash/optionalUniqueId',
+        url: elasticsearch_url + '/twitter/optionalUniqueId',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

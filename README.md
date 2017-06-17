@@ -1,13 +1,15 @@
 # Elasticsearch and NextCloud Demo
 <p align=center>
 
-This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture. The nginx logs will be sent to Elasticsearch via Fluent and then can be analyzed with Kibana. The logs will also be archived to the S3 server.
+The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs
+and Twitter for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
 
 ### Prerequisites
 
 1. Docker for [Mac](https://download.docker.com/mac/stable/Docker.dmg) or [Windows](https://download.docker.com/win/stable/InstallDocker.msi).
 2. This Git [Repo](https://github.com/rusher81572/elasticsearch-demo/archive/master.zip)
 3. 3GB of RAM or greater for Docker
+4. (Optional) [Twitter API credentials](https://dev.twitter.com/)
 
 ### Building the images
 ```
@@ -15,6 +17,8 @@ unzip elastic-demo-master.zip
 cd elastic-demo-master
 docker-compose build
 ```
+If you want to use the Twitter app to mine data from Twitter, modify the twitter section of docker-compose.yml with
+your developer API credentials.
 
 ### Starting the containers
 

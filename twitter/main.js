@@ -20,40 +20,38 @@ var client = new Twitter({
 
 function search_twitter() {
 
-  client.stream('statuses/filter', {
+  var stream = client.stream('statuses/filter', {
     track: twitter_topic
-  }, function(stream) {
+  });
+  stream.on('data', function(event) {
 
-    stream.on('data', function(event) {
+    var message = JSON.stringify({
+      'Date': event.created_at,
+      'UserName': event.user.screen_name,
+      'Tweet': event.text,
+      'URL:': 'https://twitter.com/' + event.user.screen_name + '/status/' + event.id_str
+    });
 
-      var message = JSON.stringify({
-        'Date': event.created_at,
-        'UserName': event.user.screen_name,
-        'Tweet': event.text,
-        'URL:': 'https://twitter.com/' + event.user.screen_name + '/status/' + event.id_str
-      });
+    var options = {
+      url: elasticsearch_url + '/twitter/optionalUniqueId',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': message.length
+      },
+      body: message
+    }
 
-      var options = {
-        url: elasticsearch_url + '/twitter/optionalUniqueId',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': message.length
-        },
-        body: message
+    request(options, function(error, response, body) {
+      if (error) {
+        console.log(error);
       }
-
-      request(options, function(error, response, body) {
-        if (error) {
-          console.log(error);
-        }
-      });
     });
+  });
 
-    stream.on('error', function(error) {
-      console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search.')
-      search_twitter();
-    });
+  stream.on('error', function(error) {
+    console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search.')
+    search_twitter();
   });
 }
 

@@ -50,14 +50,16 @@ function search_twitter() {
   });
 
   stream.on('error', function(error) {
-    console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search.')
-    search_twitter();
-  });
-}
+      console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search in 30 seconds.')
+      setTimeout(function({
+          search_twitter();
+        }, 30000);
+      });
+  }
 
-if (consumer_key && consumer_secret && access_token_key && elasticsearch_url && twitter_topic) {
-  console.log('\nLooking for ' + twitter_topic);
-  search_twitter();
-} else {
-  console.log('\n[Error: Missing arguments!]\n');
-}
+  if (consumer_key && consumer_secret && access_token_key && elasticsearch_url && twitter_topic) {
+    console.log('\nLooking for ' + twitter_topic);
+    search_twitter();
+  } else {
+    console.log('\n[Error: Missing arguments!]\n');
+  }

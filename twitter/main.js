@@ -51,7 +51,7 @@ function search_twitter() {
 
   stream.on('error', function(error) {
       console.log('\nAn error has occurred \n\n' + error + '\n\nRestarting search in 30 seconds.')
-      setTimeout(function({
+      setTimeout(function(){
           search_twitter();
         }, 30000);
       });

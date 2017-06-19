@@ -50,7 +50,12 @@ function search_twitter() {
   });
 
   stream.on('error', function(error) {
-    console.log('\nAn error has occurred \n\n' + error + '\n\n')
+    console.log('\nAn error has occurred.\n' + error + '\n');
+  });
+
+  stream.on('close', function(message) {
+    console.log('\n\nConnection Closed. Restarting Stream.\n\n');
+    search_twitter();
   });
 }
 

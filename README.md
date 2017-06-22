@@ -1,8 +1,7 @@
 # Mine data with Elasticsearch
 <p align=center>
 
-The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs
-and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
+The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs, [Aircraft Delays](https://www.transtats.bts.gov), and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
 
 ### Prerequisites
 

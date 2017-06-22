@@ -62,6 +62,8 @@ The default index of "logstash" will show you the nginx logs.
 
 To view Twitter traffic, change the index to twitter or go to Management->Index Patterns-> + and then add twitter. Uncheck 'Index contains time-based events'.
 
+To view Flight delay data, change the index to flightdata or go to Management->Index Patterns-> + and then add flightdata. Uncheck 'Index contains time-based events'.
+
 ### Stopping and Erasing the demo
 
 The following commands will stop and delete all running containers.

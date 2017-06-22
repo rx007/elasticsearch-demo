@@ -112,7 +112,7 @@ function searchData() {
 }
 
 if (source && elasticsearch_url) {
-  clear_data();
+  //clear_data();
   create_mapping();
   setTimeout(function() {
     searchData();

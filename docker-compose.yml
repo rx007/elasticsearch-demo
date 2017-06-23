@@ -2,14 +2,6 @@ version: "2"
 
 services:
 
-  fileserverweb:
-    build: ./fileserver
-    restart: always
-    volumes:
-      - ./fileserver/html:/var/www/html
-    networks:
-      - web
-
   fluent:
     build: ./fluent
     restart: always
@@ -55,12 +47,6 @@ services:
     networks:
       - web
 
-  mysql:
-    build: ./mysql
-    restart: always
-    networks:
-      - web
-
   phpfpm:
     build: ./phpfpm
     restart: always
@@ -78,18 +64,6 @@ services:
       - web
     networks:
       web:
-
-  nginx:
-    build: ./nginx
-    restart: always
-    ports:
-      - 80:80
-      - 443:443
-    restart: always
-    volumes_from:
-       - fileserverweb
-    networks:
-      - web
 
   twitter:
     build: ./twitter

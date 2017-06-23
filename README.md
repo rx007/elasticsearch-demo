@@ -50,9 +50,9 @@ fe6e3979b61d        elasticsearchdemo_flight-delays          "/bin/sh -c 'sleep.
 1529e5b94043        elasticsearchdemo_twitter                "/bin/sh -c 'npm i..."   36 seconds ago      Up 1 second                                                    elasticsearchdemo_twitter_1
 ```
 
-### Login to NextCloud
-1. Goto http://127.0.0.1 in your web browser
-2. Login with nextcloud for the username and password
+### Login to the Minio web console to see the logs
+1. Goto http://127.0.0.:9000 in your web browser
+2. Login with accessKey1 for the username and verySecretKey1 for the password
 3. After a few minutes, the nginx log files and Tweets will start appearing there from Fluent and the Twitter app.
 
 (All of the NextCloud data is stored on Minio)

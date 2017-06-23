@@ -20,6 +20,8 @@ services:
       - web
     ports:
       - 9200:9200
+    volumes:
+      - /opt/elasticsearch-5.4.1/logs
 
   elasticsearch-slave1:
     build: ./elasticsearch

@@ -46,11 +46,12 @@ d009ffb5b8cc        nextcloud_phpfpm          "/bin/sh -c 'bash ..."   23 minute
 ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minutes ago      Up 13 minutes       0.0.0.0:5601->5601/tcp                     nextcloud_kibana_1
 ```
 
-### Login to NextCloud and browse the S3 Bucket
+### Login to NextCloud
 1. Goto http://127.0.0.1 in your web browser
 2. Login with nextcloud for the username and password
-3. Click on the folder "s3"
-4. After a few minutes, the nginx log files and Tweets will start appearing there from Fluent and the Twitter app.
+3. After a few minutes, the nginx log files and Tweets will start appearing there from Fluent and the Twitter app.
+
+(All of the NextCloud data is stored on Minio)
 
 ### Accessing Kibana
 1. Goto https://0.0.0.0:5601 in your web browser

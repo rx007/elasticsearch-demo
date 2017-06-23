@@ -73,7 +73,7 @@ services:
     build: ./minio
     restart: always
     ports:
-      - 8000:9000
+      - 9000:9000
     networks:
       - web
     networks:

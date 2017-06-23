@@ -78,9 +78,6 @@ services:
       - web
     networks:
       web:
-        aliases:
-          - s3.docker.test
-          - mybucket.s3.docker.test
 
   nginx:
     build: ./nginx

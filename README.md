@@ -35,15 +35,19 @@ docker ps
 You should see the following containers running:
 
 ```
-CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                      NAMES
-2a09e1fcc50        nextcloud_minio              "npm start"              13 minutes ago      Up 13 minutes       0.0.0.0:8000->8000/tcp                     nextcloud_minio_1
-8204cb4e7342        nextcloud_fluent          "/bin/sh -c 'fluen..."   23 minutes ago      Up 13 minutes                                                  nextcloud_fluent_1
-d009ffb5b8cc        nextcloud_phpfpm          "/bin/sh -c 'bash ..."   23 minutes ago      Up 13 minutes       9001/tcp                                   nextcloud_phpfpm_1
-715324d7ce85        nextcloud_nginx           "/bin/sh -c nginx"       23 minutes ago      Up 13 minutes       0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp   nextcloud_nginx_1
-70bc55852392        nextcloud_fileserverweb   "/bin/sh -c 'sleep..."   23 minutes ago      Up 13 minutes                                                  nextcloud_fileserverweb_1
-538780dda333        nextcloud_mysql           "/bin/sh -c /start.sh"   23 minutes ago      Up 13 minutes       3306/tcp                                   nextcloud_mysql_1
-7ea58918c49e        nextcloud_elasticsearch   "/bin/sh -c 'su - ..."   23 minutes ago      Up 13 minutes                                                  nextcloud_elasticsearch_1
-ee352e1cd271        nextcloud_kibana          "/bin/sh -c 'cd /k..."   23 minutes ago      Up 13 minutes       0.0.0.0:5601->5601/tcp                     nextcloud_kibana_1
+CONTAINER ID        IMAGE                                    COMMAND                  CREATED             STATUS              PORTS                                      NAMES
+672757cc2856        elasticsearchdemo_fluent                 "/bin/sh -c 'fluen..."   22 seconds ago      Up 20 seconds                                                  elasticsearchdemo_fluent_1
+417e9e277d53        elasticsearchdemo_nginx                  "/bin/sh -c nginx"       29 seconds ago      Up 22 seconds       0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp   elasticsearchdemo_nginx_1
+886376d5f7b8        elasticsearchdemo_phpfpm                 "/bin/sh -c 'bash ..."   29 seconds ago      Up 22 seconds       9001/tcp                                   elasticsearchdemo_phpfpm_1
+3629708ab4f9        elasticsearchdemo_kibana                 "/bin/sh -c 'cd /k..."   35 seconds ago      Up 30 seconds       0.0.0.0:5601->5601/tcp                     elasticsearchdemo_kibana_1
+861381ee1fdb        elasticsearchdemo_elasticsearch-slave2   "/bin/sh -c 'bash ..."   35 seconds ago      Up 30 seconds                                                  elasticsearchdemo_elasticsearch-slave2_1
+fe6e3979b61d        elasticsearchdemo_flight-delays          "/bin/sh -c 'sleep..."   35 seconds ago      Up 30 seconds                                                  elasticsearchdemo_flight-delays_1
+505a1b3e3fca        elasticsearchdemo_elasticsearch-master   "/bin/sh -c 'bash ..."   35 seconds ago      Up 29 seconds       0.0.0.0:9200->9200/tcp                     elasticsearchdemo_elasticsearch-master_1
+00138ebed6e7        elasticsearchdemo_mysql                  "/bin/sh -c /start.sh"   35 seconds ago      Up 30 seconds       3306/tcp                                   elasticsearchdemo_mysql_1
+8fcbecc8abec        elasticsearchdemo_elasticsearch-slave1   "/bin/sh -c 'bash ..."   35 seconds ago      Up 29 seconds                                                  elasticsearchdemo_elasticsearch-slave1_1
+384aa0b84866        elasticsearchdemo_minio                  "/bin/sh -c './min..."   35 seconds ago      Up 31 seconds       0.0.0.0:9000->9000/tcp                     elasticsearchdemo_minio_1
+7dcd7dfe38fd        elasticsearchdemo_fileserverweb          "/bin/sh -c 'sleep..."   36 seconds ago      Up 32 seconds                                                  elasticsearchdemo_fileserverweb_1
+1529e5b94043        elasticsearchdemo_twitter                "/bin/sh -c 'npm i..."   36 seconds ago      Up 1 second                                                    elasticsearchdemo_twitter_1
 ```
 
 ### Login to NextCloud

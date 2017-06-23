@@ -46,7 +46,7 @@ cfbcca83cdc5        elasticsearchdemo_elasticsearch-slave1   "/bin/sh -c 'bash .
 ```
 
 ### Login to the Minio web console to see the logs
-1. Goto http://127.0.0.:9000 in your web browser
+1. Goto http://127.0.0.1:9000 in your web browser
 2. Login with accessKey1 for the username and verySecretKey1 for the password
 3. After a few minutes, the Elasticsearch log files will start appearing there from Fluent.
 

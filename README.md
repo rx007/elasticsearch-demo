@@ -1,7 +1,7 @@
 # Mine data with Elasticsearch
 <p align=center>
 
-The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs, [Aircraft Delays](https://www.transtats.bts.gov), and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Scality S3 Server in a microservices architecture.
+The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs, [Aircraft Delays](https://www.transtats.bts.gov), and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Minio S3 Server in a microservices architecture.
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ You should see the following containers running:
 
 ```
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                      NAMES
-2a09e1fcc50        nextcloud_s3              "npm start"              13 minutes ago      Up 13 minutes       0.0.0.0:8000->8000/tcp                     nextcloud_s3_1
+2a09e1fcc50        nextcloud_minio              "npm start"              13 minutes ago      Up 13 minutes       0.0.0.0:8000->8000/tcp                     nextcloud_minio_1
 8204cb4e7342        nextcloud_fluent          "/bin/sh -c 'fluen..."   23 minutes ago      Up 13 minutes                                                  nextcloud_fluent_1
 d009ffb5b8cc        nextcloud_phpfpm          "/bin/sh -c 'bash ..."   23 minutes ago      Up 13 minutes       9001/tcp                                   nextcloud_phpfpm_1
 715324d7ce85        nextcloud_nginx           "/bin/sh -c nginx"       23 minutes ago      Up 13 minutes       0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp   nextcloud_nginx_1

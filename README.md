@@ -1,7 +1,7 @@
 # Mine data with Elasticsearch
 <p align=center>
 
-The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs, [Aircraft Delays](https://www.transtats.bts.gov), and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run NextCloud, Fluentd, Elastisearch, Kibana, and the Minio S3 Server in a microservices architecture.
+The purpose of this demo is to show how to feed data into Elasticsearch from Nginx logs, [Aircraft Delays](https://www.transtats.bts.gov), and a desired Twitter hashtag for data analytics and then archive them to S3. This demo will run Fluentd, Elastisearch, Kibana, and the Minio S3 Server in a microservices architecture.
 
 ### Prerequisites
 
@@ -53,9 +53,8 @@ fe6e3979b61d        elasticsearchdemo_flight-delays          "/bin/sh -c 'sleep.
 ### Login to the Minio web console to see the logs
 1. Goto http://127.0.0.:9000 in your web browser
 2. Login with accessKey1 for the username and verySecretKey1 for the password
-3. After a few minutes, the nginx log files and Tweets will start appearing there from Fluent and the Twitter app.
+3. After a few minutes, the Nginx log files will start appearing there from Fluent.
 
-(All of the NextCloud data is stored on Minio)
 
 ### Accessing Kibana
 1. Goto https://0.0.0.0:5601 in your web browser

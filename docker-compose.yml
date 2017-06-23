@@ -47,14 +47,6 @@ services:
     networks:
       - web
 
-  phpfpm:
-    build: ./phpfpm
-    restart: always
-    volumes_from:
-       - fileserverweb
-    networks:
-      - web
-
   minio:
     build: ./minio
     restart: always

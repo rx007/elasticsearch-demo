@@ -34,49 +34,49 @@ function clear_data() {
 
 function create_mapping() {
   setTimeout(function() {
-      var mapping = {
-        "mappings": {
-          "user": {
-            "_all": {
-              "enabled": true
+    var mapping = {
+      "mappings": {
+        "user": {
+          "_all": {
+            "enabled": true
+          },
+          "properties": {
+            "airline": {
+              "type": "string",
+              "index": "analyzed"
             },
-            "properties": {
-              "airline": {
-                "type": "string",
-                "index": "analyzed"
-              },
-              "delays": {
-                "type": "double",
-                "index": "analyzed",
-              },
-              "airport": {
-                "type": "string",
-                "index": "analyzed",
-              }
+            "delays": {
+              "type": "double",
+              "index": "analyzed",
+            },
+            "airport": {
+              "type": "string",
+              "index": "analyzed",
+            }
+          }
         }
       }
     }
-  }
-  var options = {
-    url: elasticsearch_url + '/flightdata',
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      'Content-Length': mapping.length
-    },
-    body: JSON.stringify(mapping)
-  }
-
-  request(options, function(error, response, body) {
-    console.log('\nCreating Map......')
-    if (error) {
-      console.log('\n' + error + '\n\n');
-    } else {
-      console.log('\n' + body);
-
+    var options = {
+      url: elasticsearch_url + '/flightdata',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': mapping.length
+      },
+      body: JSON.stringify(mapping)
     }
-  });
-}, 5000);
+
+    request(options, function(error, response, body) {
+      console.log('\nCreating Map......')
+      if (error) {
+        console.log('\n' + error + '\n\n');
+      } else {
+        console.log('\n' + body);
+
+      }
+    });
+  }, 5000);
 }
 
 function searchData() {
@@ -87,26 +87,28 @@ function searchData() {
 
   for (i in read_data) {
     var a = read_data[i].split(',');
-    if (a[3] && a[4] && a[13]) {
-      clean_delay_count = a[13].replace(/\r/g, '').replace(/\"/g, '');
-      clean_airport = a[4].replace(/\r/g, '').replace(/\"/g, '');
-      var options = {
-        url: elasticsearch_url + '/flightdata/optionalUniqueId',
-        method: 'POST',
-        header: {
-          contentType: 'application/json'
-        },
-        body: JSON.stringify({
-          'airline': a[3],
-          'airport': clean_airport,
-          'delays': clean_delay_count
-        })
-      }
-      request(options, function(error, response, body) {
-        if (error) {
-          console.log('\n' + error);
+    if (i != 0) {
+      if (a[3] && a[4] && a[13]) {
+        clean_delay_count = a[13].replace(/\r/g, '').replace(/\"/g, '');
+        clean_airport = a[4].replace(/\r/g, '').replace(/\"/g, '');
+        var options = {
+          url: elasticsearch_url + '/flightdata/optionalUniqueId',
+          method: 'POST',
+          header: {
+            contentType: 'application/json'
+          },
+          body: JSON.stringify({
+            'airline': a[3],
+            'airport': clean_airport,
+            'delays': clean_delay_count
+          })
         }
-      });
+        request(options, function(error, response, body) {
+          if (error) {
+            console.log('\n' + error);
+          }
+        });
+      }
     }
   }
 }

@@ -37,9 +37,6 @@ function create_mapping() {
     var mapping = {
       "mappings": {
         "user": {
-          "_all": {
-            "enabled": true
-          },
           "properties": {
             "airline": {
               "type": "string",

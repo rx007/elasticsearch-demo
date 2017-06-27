@@ -110,9 +110,9 @@ function searchData() {
         }
 
         request(options, function(error, response, body) {
-          if (error) {
-            console.log('\n' + error);
-          }
+          //if (error) {
+        //    console.log('\n' + error);
+        //  }
         });
       }
     }

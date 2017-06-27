@@ -103,7 +103,7 @@ function searchData() {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'airline': a[3],
+            'airline': clean_airline,
             'airport': clean_airport,
             'delays': clean_delay_count
           })

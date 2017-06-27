@@ -1,6 +1,6 @@
 FROM ubuntu
 RUN apt-get update;apt-get install -y git curl build-essential python
-RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh
+RUN curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh
 RUN bash nodesource_setup.sh
 RUN apt-get install -y nodejs
 RUN git clone https://github.com/elastic/kibana.git

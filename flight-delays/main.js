@@ -45,7 +45,7 @@ function create_mapping() {
         "flightdata": {
           "properties": {
             "airline": {
-              "type": "text",
+              "type": "keyword",
               "index": "true"
             },
             "delays": {
@@ -53,7 +53,7 @@ function create_mapping() {
               "index": "true"
             },
             "airport": {
-              "type": "text",
+              "type": "keyword",
               "index": "true"
             }
           }

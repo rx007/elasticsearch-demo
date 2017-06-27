@@ -35,11 +35,11 @@ function clear_data() {
 function create_mapping() {
   setTimeout(function() {
     var mapping = {
-      "settings" : {
-          "index" : {
-              "number_of_shards" : 3,
-              "number_of_replicas" : 2
-          }
+      "settings": {
+        "index": {
+          "number_of_shards": 3,
+          "number_of_replicas": 2
+        }
       },
       "mappings": {
         "flightdata": {
@@ -111,8 +111,8 @@ function searchData() {
 
         request(options, function(error, response, body) {
           //if (error) {
-        //    console.log('\n' + error);
-        //  }
+          //    console.log('\n' + error);
+          //  }
         });
       }
     }

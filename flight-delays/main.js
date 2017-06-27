@@ -43,7 +43,7 @@ function create_mapping() {
               "index": "true"
             },
             "delays": {
-              "type": "text",
+              "type": "integer",
               "index": "true",
             },
             "airport": {
@@ -109,7 +109,7 @@ function searchData() {
 }
 
 if (source && elasticsearch_url) {
-  //clear_data();
+  clear_data();
   create_mapping();
   setTimeout(function() {
     searchData();

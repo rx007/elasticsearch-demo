@@ -35,20 +35,26 @@ function clear_data() {
 function create_mapping() {
   setTimeout(function() {
     var mapping = {
+      "settings" : {
+          "index" : {
+              "number_of_shards" : 3,
+              "number_of_replicas" : 2
+          }
+      },
       "mappings": {
-        "user": {
+        "flightdata": {
           "properties": {
             "airline": {
               "type": "text",
               "index": "true"
             },
             "delays": {
-              "type": "integer",
-              "index": "true",
+              "type": "double",
+              "index": "true"
             },
             "airport": {
               "type": "text",
-              "index": "true",
+              "index": "true"
             }
           }
         }
@@ -83,15 +89,18 @@ function searchData() {
   var clean_mystring = '';
 
   for (i in read_data) {
-    var a = read_data[i].split(',');
+    if (i != 0) {
+      var a = read_data[i].split(',');
       if (a[3] && a[4] && a[13]) {
+        clean_airline = a[3].replace(/\r/g, '').replace(/\"/g, '');
         clean_delay_count = a[13].replace(/\r/g, '').replace(/\"/g, '');
         clean_airport = a[4].replace(/\r/g, '').replace(/\"/g, '');
+
         var options = {
-          url: elasticsearch_url + '/flightdata/optionalUniqueId',
+          url: elasticsearch_url + '/flightdata/flightdata',
           method: 'POST',
-          header: {
-            contentType: 'application/json'
+          headers: {
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
             'airline': a[3],
@@ -99,12 +108,14 @@ function searchData() {
             'delays': clean_delay_count
           })
         }
+
         request(options, function(error, response, body) {
           if (error) {
             console.log('\n' + error);
           }
         });
       }
+    }
   }
 }
 

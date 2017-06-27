@@ -43,15 +43,15 @@ function create_mapping() {
           "properties": {
             "airline": {
               "type": "string",
-              "index": "analyzed"
+              "index": "true"
             },
             "delays": {
               "type": "double",
-              "index": "analyzed",
+              "index": "true",
             },
             "airport": {
               "type": "string",
-              "index": "analyzed",
+              "index": "true",
             }
           }
         }
@@ -87,7 +87,8 @@ function searchData() {
 
   for (i in read_data) {
     var a = read_data[i].split(',');
-    if (i != 0) {
+  //  if (i != 0) {
+      console.log('\n' + a);
       if (a[3] && a[4] && a[13]) {
         clean_delay_count = a[13].replace(/\r/g, '').replace(/\"/g, '');
         clean_airport = a[4].replace(/\r/g, '').replace(/\"/g, '');
@@ -109,7 +110,7 @@ function searchData() {
           }
         });
       }
-    }
+  //  }
   }
 }
 

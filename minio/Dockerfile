@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:kinetic-20220830
 VOLUME /data
 WORKDIR /minio
 RUN mkdir /root/.minio

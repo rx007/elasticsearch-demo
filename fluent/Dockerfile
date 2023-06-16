@@ -1,5 +1,5 @@
 #FROM armv7/armhf-ubuntu
-FROM ubuntu
+FROM ubuntu:kinetic
 RUN apt-get update;apt-get install ruby-dev build-essential -y
 RUN gem install fluentd -v "~> 0.12.0"
 RUN fluent-gem install fluent-plugin-td fluent-plugin-s3 fluent-plugin-elasticsearch

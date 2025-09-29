@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:24.10
 RUN apt-get update;apt-get install openjdk-8-jdk tar wget -y
 RUN wget -q -O eleastic-search.tar.gz https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.4.1.tar.gz
 RUN tar xf eleastic-search.tar.gz -C /opt/

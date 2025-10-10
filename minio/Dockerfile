@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:24.04
 VOLUME /data
 WORKDIR /minio
 RUN mkdir /root/.minio
